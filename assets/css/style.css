@@ -1,0 +1,251 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* ==========================================
+   1. Variáveis Globais & Design System
+   ================================---------- */
+:root {
+    --primary-blue: #002776;
+    --dark-blue: #0A192F;
+    --accent-green: #2A9D8F;
+    --accent-yellow: #E9C46A;
+    --bg-light: #F8F9FA;
+    --text-main: #212529;
+    --white: #FFFFFF;
+    
+    --font-base: 'Inter', 'Roboto', sans-serif;
+    
+    /* Espaçamentos responsivos globais seguros */
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    
+    --container-max: 1200px;
+}
+
+/* ==========================================
+   2. Reset Moderno & Mobile-First Base
+   ================================---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================
+   3. Layout & Containers Responsivos
+   ================================---------- */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+}
+
+/* ==========================================
+   4. Componentes Globais (Botões e Tipografia)
+   ================================---------- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-green);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: filter 0.2s ease;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    filter: brightness(0.9);
+}
+
+.btn-large {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+
+/* ==========================================
+   5. Header & Topo
+   ================================---------- */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 1.2rem 0;
+    background: linear-gradient(to bottom, rgba(10,25,47,0.8), transparent);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo-img {
+    max-height: 40px;
+    width: auto;
+}
+
+/* Lógica de Texto Responsivo no Botão do Header */
+.text-desktop {
+    display: none;
+}
+.text-mobile {
+    display: inline;
+}
+
+@media (min-width: 768px) {
+    .text-desktop {
+        display: inline;
+    }
+    .text-mobile {
+        display: none;
+    }
+}
+
+.btn-header {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   6. Primeira Dobra (Hero Section) & Backgrounds
+   ================================---------- */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    /* Mobile-First: Carrega a imagem de fundo mobile por padrão */
+    background-image: url('../images/Celebração-Naval-ao-Sol.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; /* Compensa a altura do header fixo */
+}
+
+/* Overlay escuro para garantir contraste e legibilidade sobre a foto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.75);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    max-width: 800px;
+    padding: 2rem var(--spacing-sm);
+}
+
+.hero-title {
+    font-family: var(--font-base);
+    font-weight: 900; /* Peso Black exigido */
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 700; /* Peso Bold exigido */
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Ajustes Responsivos para Desktop (Troca da Imagem de Fundo e Tipografia) */
+@media (min-width: 768px) {
+    .hero-section {
+        /* Troca automática para a imagem de fundo de desktop */
+        background-image: url('../images/Amor-em-cerimônia-naval-tropical.webp');
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.35rem;
+    }
+}
+
+/* ==========================================
+   7. Footer Base
+   ================================---------- */
+.footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    margin: 0 0.3rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .btn-large {
+        width: auto;
+    }
+}

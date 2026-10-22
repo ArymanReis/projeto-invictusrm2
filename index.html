@@ -3,80 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projeto Invictus RM2 - Transforme sua trajetória.">
-    <title>Preparatório Invictus RM2</title>
-    
-    <!-- Pré-conexões de Performance -->
+    <meta name="description" content="Prepare-se para a prova de Português da Marinha com o método Invictus RM2.">
+    <meta name="theme-color" content="#0A192F">
+    <title>Invictus RM2 | Português para a prova da Marinha</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- CSS Principal -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-
-    <!-- Header Fixo / Superior -->
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo-wrapper">
-                <!-- Coloque o logo em SVG na pasta assets/images/logo.svg -->
-                <img src="./assets/images/logo.svg" alt="Invictus RM2" class="logo-img" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='block';">
-                <span id="fallback-logo" class="logo-text" style="display:none;">INVICTUS RM2</span>
+            <a href="index.html" class="brand" aria-label="Invictus RM2 — início">
+                <img src="./assets/icons/cursoinvictus_logo.svg" alt="Invictus RM2" class="logo-img">
+                <img src="./assets/icons/marinha-do-brasil-logo.svg" alt="Marinha do Brasil" class="logo-img">
             </a>
-            
             <a href="quiz.html" class="btn-primary btn-header">
-                <span class="text-mobile">QUERO APROVAÇÃO</span>
+                <span class="text-mobile">QUERO APROVAÇÃO RM2</span>
                 <span class="text-desktop">QUERO GARANTIR MINHA APROVAÇÃO RM2</span>
             </a>
         </div>
     </header>
 
-    <!-- Primeira Dobra (Hero Section) -->
-    <!-- Primeira Dobra (Hero Section) -->
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">O método rápido e certeiro para gabaritar Português na prova da Marinha.</h1>
-            <p class="hero-subtitle">Aprenda com quem já sentiu na pele essa dificuldade. Método passo a passo, do básico ao avançado, focado na banca RM2 da Marinha.</p>
-            
-            <div class="hero-cta-wrapper">
-                <a href="quiz.html" class="btn-primary btn-large">
-                    <span class="text-mobile">QUERO APROVAÇÃO RM2</span>
-                    <span class="text-desktop">QUERO GARANTIR MINHA APROVAÇÃO RM2</span>
-                </a>
+    <main>
+        <section class="hero-section">
+            <div class="container hero-content">
+                <h1 class="hero-title">O método rápido e certeiro para <span>gabaritar Português</span> na prova da Marinha.</h1>
+                <p class="hero-subtitle">Aprenda com quem <strong>já sentiu na pele essa dificuldade</strong>. Método <strong>passo a passo</strong>, do básico ao avançado, <strong>focado na banca RM2 da Marinha</strong>.</p>
+                <div class="hero-cta-wrapper">
+                    <a href="quiz.html" class="btn-primary btn-large">
+                        <span class="text-mobile">QUERO APROVAÇÃO RM2</span>
+                        <span class="text-desktop">QUERO GARANTIR MINHA APROVAÇÃO RM2</span>
+                    </a>
+                </div>
             </div>
+            <a class="scroll-cue" href="#beneficios" aria-label="Benefícios"><span aria-hidden="true">↓</span></a>
+            <div class="hero-benefits" id="beneficios" aria-label="Benefícios do curso">
+                <div class="hero-benefits-inner">
+                    <div class="benefit-item">
+                        <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21V5.5Z"/><path d="M4 17.5A2.5 2.5 0 0 1 6.5 15H20M8 7h8M8 10h6"/></svg></span>
+                        <span>Curso Completo de Português</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5M8 10.8l1.8 1.8 3.8-4"/></svg></span>
+                        <span>Foco cirúrgico na banca RM2</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5v-13A2.5 2.5 0 0 1 6.5 3Z"/><path d="m9 10 2 2 4-4"/></svg></span>
+                        <span>Do Zero ao Avançado</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <!-- Barra de Mini-Benefícios Inferior -->
-            <div class="hero-benefits">
-                <div class="benefit-item">
-                    <svg class="benefit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Curso Completo de Português</span>
+        <section class="risks-section" aria-labelledby="risks-title">
+            <div class="container risks-container">
+                <div class="risks-intro">
+                    <h2 class="risks-title" id="risks-title">A vida é curta demais para perder tempo com conteúdos que não te aprovam na Marinha.</h2>
+                    <p class="risks-description">Estudar sem método e sem foco na banca RM2 só vai te fazer perder meses preciosos. Não deixe o tempo passar e a sua vaga escapar.</p>
                 </div>
-                <div class="benefit-item">
-                    <svg class="benefit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Foco cirúrgico na banca RM2</span>
+                <div class="risks-list">
+                    <article class="risk-item">
+                        <span class="risk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 2.8 19a1.3 1.3 0 0 0 1.1 2h16.2a1.3 1.3 0 0 0 1.1-2L12 3Z"/><path d="M12 9v5m0 3h.01"/></svg></span>
+                        <p>Continuar preso na rotina de baixos salários e na incerteza profissional.</p>
+                    </article>
+                    <article class="risk-item">
+                        <span class="risk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+                        <p>Desperdiçar meses estudando materiais genéricos que não caem na prova.</p>
+                    </article>
+                    <article class="risk-item">
+                        <span class="risk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"/><path d="M8.5 15.5s1.2-2 3.5-2 3.5 2 3.5 2M9 9h.01M15 9h.01"/></svg></span>
+                        <p>Sentir a frustração de ver outros candidatos conquistarem a farda enquanto você fica para trás.</p>
+                    </article>
                 </div>
-                <div class="benefit-item">
-                    <svg class="benefit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span>Do Zero ao Avançado</span>
+                <div class="risks-cta">
+                    <a href="quiz.html" class="btn-primary btn-large">
+                        <span class="text-mobile">QUERO APROVAÇÃO RM2</span>
+                        <span class="text-desktop">QUERO GARANTIR MINHA APROVAÇÃO RM2</span>
+                    </a>
                 </div>
+            </div>
+        </section>
+
+        <section class="guide-section" aria-labelledby="guide-title">
+            <div class="container guide-container">
+                <div class="guide-intro">
+                    <h2 class="guide-title" id="guide-title">Quem já passou por isso vai te guiar até a farda.</h2>
+                    <p class="guide-description">O Prof. Eduardo sentiu na pele a dificuldade com o Português militar até conquistar sua aprovação.</p>
+                </div>
+                <div class="guide-highlights">
+                    <article class="guide-highlight">
+                        <img src="./assets/images/professor-eduardo-portugues-invictus.webp" alt="Prof. Eduardo" class="guide-avatar">
+                        <p><strong>Prof. Eduardo:</strong> Especialista na banca RM2 e +1.000 alunos preparados.</p>
+                    </article>
+                    <article class="guide-highlight">
+                        <span class="guide-hat"><img src="./assets/icons/invictus-chapeu.svg" alt="" aria-hidden="true"></span>
+                        <p><strong>Curso Invictus:</strong> Tradição e +9.000 alunos formados.</p>
+                    </article>
+                </div>
+                <div class="guide-cta">
+                    <a href="quiz.html" class="btn-primary btn-large">
+                        <span class="text-mobile">QUERO APROVAÇÃO RM2</span>
+                        <span class="text-desktop">QUERO GARANTIR MINHA APROVAÇÃO RM2</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section" aria-labelledby="process-title">
+            <div class="container process-container">
+                <h2 class="process-title" id="process-title">3 passos simples até a sua aprovação</h2>
+                <div class="process-steps">
+                    <article class="process-step">
+                        <span class="process-node" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7.5h14M7.5 4v7m9-7v7M6 20h12a2 2 0 0 0 2-2V8H4v10a2 2 0 0 0 2 2Z"/><path d="m9 15 2 2 4-4"/></svg></span>
+                        <div><h3>Passo 1</h3><p>Garantir sua vaga no treinamento.</p></div>
+                    </article>
+                    <article class="process-step">
+                        <span class="process-node" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5v-13A2.5 2.5 0 0 1 6.5 3Z"/><path d="M8 8h8M8 11h6"/></svg></span>
+                        <div><h3>Passo 2</h3><p>Seguir o método direto ao ponto (do zero ao avançado).</p></div>
+                    </article>
+                    <article class="process-step">
+                        <span class="process-node" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m12 3 7 3v5c0 4.7-2.9 8.1-7 10-4.1-1.9-7-5.3-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                        <div><h3>Passo 3</h3><p>Dominar a banca RM2 e conquistar a sua farda.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="offer-section" aria-labelledby="offer-title">
+            <div class="container offer-container">
+                <h2 class="offer-title" id="offer-title">Tudo o que você recebe ao se matricular hoje:</h2>
+                <div class="offer-value-grid">
+                    <article class="offer-value-card">
+                        <span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 11.3V16c2.9 2.7 7.1 2.7 10 0v-4.7M21 9v6"/></svg></span>
+                        <h3>Curso Completo de Português RM2:</h3>
+                        <p>97 aulas práticas (36h 13min) focadas na banca da Marinha.</p>
+                    </article>
+                    <article class="offer-value-card">
+                        <span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-6.5A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8 11h8M8 14h5"/></svg></span>
+                        <h3>Grupo Exclusivo de Alunos:</h3>
+                        <p>Troca de experiências, motivação e acompanhamento diário com dicas e novidades do concurso diretamente com o Prof. Eduardo.</p>
+                    </article>
+                    <article class="offer-value-card">
+                        <span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="2.5" width="12" height="19" rx="2"/><path d="M10 5.5h4M11 18.5h2"/></svg></span>
+                        <h3>Suporte Direto via WhatsApp:</h3>
+                        <p>Canal exclusivo para tirar suas dúvidas individuais direto com a equipe.</p>
+                    </article>
+                </div>
+                <div class="offer-stack-card">
+                    <div class="offer-stack-inner">
+                        <article class="offer-guarantee">
+                            <span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m12 3 7 3v5c0 4.7-2.9 8.1-7 10-4.1-1.9-7-5.3-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                            <div><h3>Garantia Incondicional de 7 Dias:</h3><p>Risco zero. Se não gostar, devolvemos 100% do seu dinheiro sem burocracia.</p></div>
+                        </article>
+                        <article class="offer-price">
+                            <span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>
+                            <div><h3>Condição Espacial de Lançamento:</h3><p>Apenas <strong>12x de R$ 20,37</strong> <span>(ou R$ 197,00 à vista)</span>.</p></div>
+                        </article>
+                        <div class="offer-cta">
+                            <a href="quiz.html" class="btn-primary btn-large">
+                                <span class="text-mobile">QUERO APROVAÇÃO RM2</span>
+                                <span class="text-desktop">QUERO GARANTIR MINHA APROVAÇÃO RM2</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="explainer-section" aria-labelledby="explainer-title">
+            <div class="container explainer-container">
+                <h2 class="explainer-title" id="explainer-title">Por que este preparatório é diferente de tudo o que você já viu?</h2>
+                <p class="explainer-intro">A maioria dos cursos te entope com teorias gigantescas que só te fazem perder tempo. Nosso foco é te entregar o conteúdo exato que cai na prova de Português da Marinha, com uma didática simples e aplicável...</p>
+                <button class="expand-reading" type="button" aria-expanded="false" aria-controls="expanded-reading" data-expand-reading>
+                    <span>Continuar lendo...</span>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="expanded-reading" id="expanded-reading" hidden>
+                    <p>...criada especialmente para quem precisa aprender do zero ou está há anos sem estudar. Você não precisa ser um gênio da gramática para ser aprovado no RM2. Só precisa do método certo, direcionado para a banca da Marinha, que te ensina a acertar as questões que a maioria erra. Sem rodeios, sem complicação e no seu próprio ritmo.</p>
+                    <div class="explainer-cta">
+                        <a href="quiz.html" class="btn-primary btn-large">
+                            <span class="text-mobile">QUERO APROVAÇÃO RM2</span>
+                            <span class="text-desktop">QUERO GARANTIR MINHA APROVAÇÃO RM2</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz-lead-section" aria-labelledby="quiz-lead-title">
+            <div class="container quiz-lead-layout">
+                <div class="quiz-showcase-stage">
+                    <div class="quiz-phone">
+                        <div class="quiz-phone-screen">
+                            <span class="quiz-phone-speaker" aria-hidden="true"></span>
+                            <div class="quiz-screen-content">
+                                <p>Descubra seu Índice de Prontidão para a Marinha.</p>
+                                <span class="quiz-screen-button">FAÇA O TESTE AGORA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-lead-copy">
+                    <h2 class="quiz-lead-title" id="quiz-lead-title">Descubra seu perfil de aprovação na Marinha</h2>
+                    <p class="quiz-lead-subtitle">Faça o teste rápido e veja o seu Índice de Prontidão para o Concurso RM2.</p>
+                    <ul class="quiz-benefits">
+                        <li><span class="quiz-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 3 7.5 12 12l9-4.5L12 3Z"/><path d="M7 10v5c2.9 2.7 7.1 2.7 10 0v-5M21 8v6"/></svg></span><span>Identificação do seu perfil (Praça/Oficial)</span></li>
+                        <li><span class="quiz-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg></span><span>Placar de prontidão em tempo real</span></li>
+                    </ul>
+                    <a class="btn-primary btn-large quiz-lead-cta" href="quiz.html">FAÇA O TESTE AGORA</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="footer-cta-section" aria-labelledby="footer-cta-title">
+        <div class="container">
+            <div class="footer-cta-card">
+                <div class="footer-cta-content">
+                    <h2 id="footer-cta-title">Pronto para conquistar sua farda na Marinha?</h2>
+                    <p>Gabarite Português na prova RM2 com o método focado do Prof. Eduardo.</p>
+                    <a class="btn-primary btn-large" href="quiz.html">
+                        <span class="text-mobile">QUERO APROVAÇÃO RM2</span>
+                        <span class="text-desktop">QUERO GARANTIR MINHA APROVAÇÃO RM2</span>
+                    </a>
+                </div>
+                <span class="footer-cta-shape footer-cta-shape-one" aria-hidden="true"></span>
+                <span class="footer-cta-shape footer-cta-shape-two" aria-hidden="true"></span>
             </div>
         </div>
     </section>
 
-    <!-- Footer Simples de Suporte -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Invictus RM2. Todos os direitos reservados.</p>
-            <div class="footer-links">
-                <a href="./pages/termos-de-uso.html">Termos de Uso</a> | 
-                <a href="./pages/politica-de-privacidade.html">Política de Privacidade</a> | 
-                <a href="./pages/edital.html">Edital</a> | 
-                <a href="./pages/contato.html">Contato</a>
-            </div>
+        <div class="container footer-container">
+            <nav class="footer-links" aria-label="Links institucionais">
+                <a href="./pages/faq.html">FAQ</a>
+                <a href="./pages/termos-de-uso.html">Termos de Uso</a>
+                <a href="./pages/politica-de-privacidade.html">Política de Privacidade</a>
+                <a href="./pages/edital.html">Informações do Edital</a>
+                <a href="./pages/contato.html">Atendimento / Contato</a>
+            </nav>
+            <p class="footer-copyright">&copy; 2026 Curso Invictus &amp; Prof. Eduardo. Todos os direitos reservados.</p>
         </div>
     </footer>
-
     <script src="./assets/js/main.js" defer></script>
 </body>
 </html>

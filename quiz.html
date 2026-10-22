@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A192F">
+    <meta name="description" content="Descubra seu Índice de Prontidão para a Marinha.">
+    <title>Índice de Prontidão para a Marinha | Invictus RM2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/quiz.css">
+    <script src="./assets/js/quiz.js" defer></script>
+</head>
+<body class="quiz-body">
+    <main class="quiz-app" id="quiz-app">
+        <section class="quiz-welcome" data-screen="0" aria-labelledby="welcome-title">
+            <div class="quiz-welcome-backdrop" aria-hidden="true"></div>
+            <div class="quiz-welcome-content">
+                <a class="quiz-welcome-brand" href="./index.html" aria-label="Curso Invictus">
+                    <img src="./assets/icons/cursoinvictus_logo-branco.svg" alt="Curso Invictus">
+                </a>
+                <span class="quiz-kicker">ÍNDICE DE PRONTIDÃO</span>
+                <h1 id="welcome-title">Descubra seu perfil de aprovação na Marinha</h1>
+                <button class="quiz-button quiz-button-primary" type="button" data-action="start">Começar Teste Agora</button>
+            </div>
+            <span class="quiz-welcome-mark" aria-hidden="true">
+                <img src="./assets/icons/marinha-insignia.svg" alt="">
+            </span>
+        </section>
+
+        <section class="quiz-flow" data-screen="1" aria-label="Questionário" hidden>
+            <header class="quiz-topbar">
+                <a class="quiz-mini-brand" href="./index.html" aria-label="Voltar para o Curso Invictus">
+                    <img src="./assets/icons/cursoinvictus_logo.svg" alt="Curso Invictus">
+                </a>
+                <div class="quiz-score" aria-live="polite">
+                    <span class="quiz-score-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg></span>
+                    <span><strong data-score>0</strong><small> / 100</small></span>
+                </div>
+            </header>
+
+            <div class="quiz-progress-area">
+                <div class="quiz-progress-copy"><span data-step-label>Etapa 1 de 9</span><span data-progress-label>11%</span></div>
+                <div class="quiz-progress-track" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="quiz-progress-fill"></div>
+                    <div class="quiz-progress-avatar" data-progress-avatar hidden aria-hidden="true">
+                        <img class="quiz-avatar-photo" data-avatar src="" alt="">
+                        <span class="quiz-avatar-badge"><img src="./assets/icons/marinha-insignia.svg" alt=""></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-content-wrap">
+                <button class="quiz-back" type="button" data-action="back" aria-label="Voltar para a etapa anterior">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m15 18-6-6 6-6M9 12h12"/></svg>
+                    <span>Voltar</span>
+                </button>
+
+                <div class="quiz-screen" data-step="1" aria-labelledby="step1-title">
+                    <span class="quiz-kicker">ETAPA 1</span>
+                    <h1 class="quiz-question" id="step1-title">Quem comanda a navegação?</h1>
+                    <div class="quiz-options quiz-avatar-options" role="group" aria-label="Escolha seu avatar">
+                        <button class="quiz-option quiz-avatar-option" type="button" data-choice="gender" data-value="mulher" aria-pressed="false">
+                            <span class="quiz-avatar-option-photo"><img src="./assets/images/mulher.webp" alt=""></span>
+                            <span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 0 0-14 0c0 4.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+                            <span>Sou Mulher</span>
+                        </button>
+                        <button class="quiz-option quiz-avatar-option" type="button" data-choice="gender" data-value="homem" aria-pressed="false">
+                            <span class="quiz-avatar-option-photo"><img src="./assets/images/homem.webp" alt=""></span>
+                            <span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 0 0-14 0c0 4.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+                            <span>Sou Homem</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quiz-screen" data-step="2" aria-labelledby="step2-title" hidden>
+                    <span class="quiz-kicker">ETAPA 2</span>
+                    <h1 class="quiz-question" id="step2-title">Qual é o seu nível de escolaridade?</h1>
+                    <div class="quiz-options" role="group" aria-label="Nível de escolaridade">
+                        <button class="quiz-option" type="button" data-choice="education" data-value="praca" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9.5 12 5l9 4.5-9 4.5-9-4.5Z"/><path d="M7 12v5c2.9 2.5 7.1 2.5 10 0v-5M21 10v6"/></svg></span><span><strong>Nível Técnico</strong><small>Linha Praça</small></span></button>
+                        <button class="quiz-option" type="button" data-choice="education" data-value="oficial" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9.5 12 5l9 4.5-9 4.5-9-4.5Z"/><path d="M7 12v5c2.9 2.5 7.1 2.5 10 0v-5M21 10v6"/><path d="M9 21h6"/></svg></span><span><strong>Nível Superior</strong><small>Linha Oficial</small></span></button>
+                    </div>
+                </div>
+
+                <div class="quiz-screen" data-step="3" aria-labelledby="step3-title" hidden>
+                    <span class="quiz-kicker">ETAPA 3</span>
+                    <h1 class="quiz-question" id="step3-title">O que mais te move hoje?</h1>
+                    <div class="quiz-options" role="group" aria-label="Motivação">
+                        <button class="quiz-option" type="button" data-choice="motivation" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M7 7h8a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg></span><span>Estabilidade e boa remuneração.</span></button>
+                        <button class="quiz-option" type="button" data-choice="motivation" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 8.7c0 5.1-8.8 11-8.8 11s-8.8-5.9-8.8-11a4.7 4.7 0 0 1 8.8-2.3 4.7 4.7 0 0 1 8.8 2.3Z"/></svg></span><span>Mudar a vida da minha família.</span></button>
+                        <button class="quiz-option" type="button" data-choice="motivation" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg></span><span>Orgulho em vestir a farda.</span></button>
+                    </div>
+                </div>
+
+                <div class="quiz-screen" data-step="4" aria-labelledby="step4-title" hidden>
+                    <span class="quiz-kicker">ETAPA 4</span>
+                    <h1 class="quiz-question" id="step4-title">Pode dedicar 45 minutos por dia?</h1>
+                    <div class="quiz-options" role="group" aria-label="Disponibilidade para estudar">
+                        <button class="quiz-option" type="button" data-choice="commitment" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16.5 9"/></svg></span><span>Sim, minha vaga é prioridade.</span></button>
+                        <button class="quiz-option" type="button" data-choice="commitment" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>Sim, vou encaixar na rotina.</span></button>
+                    </div>
+                </div>
+
+                <div class="quiz-screen" data-step="5" aria-labelledby="step5-title" hidden>
+                    <span class="quiz-kicker">ETAPA 5</span>
+                    <h1 class="quiz-question" id="step5-title">Pronto para estudar focado na banca RM2?</h1>
+                    <div class="quiz-options" role="group" aria-label="Foco e método">
+                        <button class="quiz-option" type="button" data-choice="method" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5v-13A2.5 2.5 0 0 1 6.5 3Z"/><path d="M8 7h8M8 11h6"/></svg></span><span>Sim, quero aprender do zero.</span></button>
+                        <button class="quiz-option" type="button" data-choice="method" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg></span><span>Sim, preciso gabaritar Português.</span></button>
+                    </div>
+                </div>
+
+                <div class="quiz-screen" data-step="6" aria-labelledby="step6-title" hidden>
+                    <span class="quiz-kicker">ETAPA 6</span>
+                    <h1 class="quiz-question" id="step6-title">Disposto a dar o passo definitivo hoje?</h1>
+                    <div class="quiz-options" role="group" aria-label="Tomada de decisão">
+                        <button class="quiz-option" type="button" data-choice="decision" data-value="committed" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 7.6 7.5 9.5 4.3-1.9 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></svg></span><span>Sim, estou 100% comprometido!</span></button>
+                        <button class="quiz-option" type="button" data-choice="decision" data-value="unsure" aria-pressed="false"><span class="quiz-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>Ainda estou pensando nisso...</span></button>
+                    </div>
+                </div>
+
+                <div class="quiz-screen quiz-story-screen" data-step="7" aria-labelledby="step7-title" hidden>
+                    <span class="quiz-kicker">SEU CAMINHO ATÉ A FARDA</span>
+                    <span class="quiz-story-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                    <h1 class="quiz-question" id="step7-title">E se você não fizer nada hoje?</h1>
+                    <p class="quiz-story-copy">Mais um ano preso na rotina e vendo outros ocuparem a sua vaga de <strong data-profile>Praça</strong>.</p>
+                </div>
+
+                <div class="quiz-screen quiz-story-screen" data-step="8" aria-labelledby="step8-title" hidden>
+                    <span class="quiz-kicker">IMAGINE SUA CONQUISTA</span>
+                    <span class="quiz-story-icon quiz-story-icon-success" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v4M8 5h8M7 9h10v5H7z"/><path d="M4 15h16l-2 5H6l-2-5Z"/><path d="M10 11h.01M14 11h.01M12 14v6"/></svg></span>
+                    <h1 class="quiz-question" id="step8-title">Sua nova realidade na Marinha:</h1>
+                    <p class="quiz-story-copy">Salário garantido, estabilidade e a farda de <strong data-profile>Praça</strong> conquistada.</p>
+                </div>
+
+                <div class="quiz-screen quiz-result-screen" data-step="9" aria-labelledby="result-title" hidden>
+                    <span class="quiz-kicker">SEU RESULTADO</span>
+                    <div class="quiz-result-medal" aria-hidden="true"><img src="./assets/icons/marinha-insignia.svg" alt=""></div>
+                    <p class="quiz-result-score"><span data-result-score>100</span><small>/100 PONTOS</small></p>
+                    <h1 class="quiz-question" id="result-title" data-result-title>APROVADO!</h1>
+                    <p class="quiz-result-copy"><span data-result-intro>Seu perfil é ideal para ser</span> <strong data-profile>Praça</strong><span data-result-suffix>. Garanta sua vaga no método.</span></p>
+                    <div class="quiz-result-actions">
+                        <a class="quiz-button quiz-button-primary" href="./index.html#offer-title">QUERO APROVAÇÃO RM2</a>
+                        <button class="quiz-button quiz-button-secondary" type="button" disabled>DÚVIDAS WHATSAPP</button>
+                    </div>
+                </div>
+
+                <div class="quiz-controls" data-controls>
+                    <p class="quiz-validation" data-validation aria-live="polite"></p>
+                    <button class="quiz-button quiz-button-primary" type="button" data-action="continue" disabled>Continuar</button>
+                </div>
+                <div class="quiz-controls" data-controls-story hidden>
+                    <button class="quiz-button quiz-button-primary" type="button" data-action="continue-story">Continuar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

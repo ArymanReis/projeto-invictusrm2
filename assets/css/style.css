@@ -30,7 +30,7 @@ a { color: inherit; }
 .text-mobile { display: none; }
 .btn-header { min-height: 44px; padding: 10px 17px; font-size: .82rem; }
 
-.hero-section { position: relative; display: flex; min-height: 690px; min-height: max(620px, calc(100svh - 82px)); flex-direction: column; justify-content: center; overflow: hidden; padding: 24px 0 0; color: var(--white); text-align: center; background: var(--dark-blue) url('../images/Celebração-Naval-ao-Sol.webp') center 42% / cover no-repeat; }
+.hero-section { position: relative; display: flex; min-height: 690px; min-height: max(620px, calc(100svh - 82px)); flex-direction: column; justify-content: center; overflow: hidden; padding: 24px 0 0; color: var(--white); text-align: center; background: var(--dark-blue) url('../images/Amor-em-cerimônia-naval-formatura-marinha-rm2-foto-milita-mobile.webp') center 42% / cover no-repeat; }
 .hero-section::before { position: absolute; inset: 0; z-index: 0; background: linear-gradient(90deg, rgb(5 17 36 / 83%), rgb(5 17 36 / 68%) 55%, rgb(5 17 36 / 64%)), linear-gradient(0deg, rgb(5 17 36 / 34%), transparent 50%); content: ''; }
 .hero-content { position: relative; z-index: 1; max-width: 900px; margin-block: auto; padding-block: 48px; }
 .hero-title { max-width: 900px; margin: 0 auto 22px; color: var(--white); font-size: clamp(2.35rem, 5.2vw, 4.35rem); font-weight: 800; line-height: 1.08; letter-spacing: -.055em; text-wrap: balance; }
@@ -93,7 +93,7 @@ a { color: inherit; }
 }
 
 @media (min-width: 900px) {
-    .hero-section { background-image: url('../images/Amor-em-cerimônia-naval-tropical.webp'); background-position: center 42%; }
+    .hero-section { background-image: url('../images/Celebração-Naval-ao-Sol-formatura-marinha-rm2-descktop.webp'); background-position: center 42%; }
 }
 
 .process-section { padding: clamp(64px, 8vw, 96px) 0; background: var(--white); }
@@ -151,7 +151,7 @@ a { color: inherit; }
 .quiz-benefit-icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .quiz-showcase-stage { position: relative; display: grid; min-height: 700px; place-items: center; }
 .quiz-phone { position: relative; width: min(350px, 84%); padding: 10px; border: 1px solid #344154; border-radius: 40px; background: #111927; box-shadow: 0 28px 60px rgb(0 0 0 / 36%), inset 0 0 0 2px rgb(255 255 255 / 5%); transform: rotate(-1deg); }
-.quiz-phone-screen { position: relative; display: flex; min-height: 570px; flex-direction: column; justify-content: center; overflow: hidden; padding: 58px 24px 30px; border-radius: 30px; background: var(--dark-blue) url('../images/Celebração-Naval-ao-Sol.webp') center / cover no-repeat; }
+.quiz-phone-screen { position: relative; display: flex; min-height: 570px; flex-direction: column; justify-content: center; overflow: hidden; padding: 58px 24px 30px; border-radius: 30px; background: var(--dark-blue) url('../images/concurso-da-marinharm2-invictus.webp') center / cover no-repeat; }
 .quiz-phone-screen::before { position: absolute; inset: 0; background: linear-gradient(145deg, rgb(5 15 65 / 72%), rgb(10 25 47 / 78%)); content: ''; }
 .quiz-phone-speaker { position: absolute; z-index: 1; top: 16px; left: 50%; width: 68px; height: 6px; border-radius: 8px; background: rgb(255 255 255 / 72%); transform: translateX(-50%); }
 .quiz-screen-content { position: relative; z-index: 1; display: grid; gap: 28px; text-align: center; }
@@ -174,7 +174,6 @@ a { color: inherit; }
     .offer-value-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .offer-value-card { min-height: 260px; }
     .quiz-lead-layout { grid-template-columns: minmax(0, .95fr) minmax(380px, 1.05fr); gap: 56px; }
-    .quiz-phone-screen { background-image: url('../images/Amor-em-cerimônia-naval-tropical.webp'); }
 }
 
 .footer-cta-section { position: relative; overflow: hidden; padding: clamp(52px, 7vw, 78px) 0; background: var(--dark-blue); }

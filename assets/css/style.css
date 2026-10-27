@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-latin.woff') format('woff');
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
 :root {
     --primary-blue: #050F41;
     --dark-blue: #0A192F;
@@ -30,18 +38,20 @@ a { color: inherit; }
 .text-mobile { display: none; }
 .btn-header { min-height: 44px; padding: 10px 17px; font-size: .82rem; }
 
-.hero-section { position: relative; display: flex; min-height: 690px; min-height: max(620px, calc(100svh - 82px)); flex-direction: column; justify-content: center; overflow: hidden; padding: 24px 0 0; color: var(--white); text-align: center; background: var(--dark-blue) url('../images/Amor-em-cerimônia-naval-formatura-marinha-rm2-foto-milita-mobile.webp') center 42% / cover no-repeat; }
-.hero-section::before { position: absolute; inset: 0; z-index: 0; background: linear-gradient(90deg, rgb(5 17 36 / 83%), rgb(5 17 36 / 68%) 55%, rgb(5 17 36 / 64%)), linear-gradient(0deg, rgb(5 17 36 / 34%), transparent 50%); content: ''; }
-.hero-content { position: relative; z-index: 1; max-width: 900px; margin-block: auto; padding-block: 48px; }
+.hero-section { position: relative; isolation: isolate; display: flex; min-height: 690px; min-height: max(620px, calc(100svh - 82px)); flex-direction: column; justify-content: center; overflow: hidden; padding: 24px 0 0; color: var(--white); text-align: center; background: var(--dark-blue); }
+.hero-background { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero-background img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+.hero-section::before { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgb(5 17 36 / 83%), rgb(5 17 36 / 68%) 55%, rgb(5 17 36 / 64%)), linear-gradient(0deg, rgb(5 17 36 / 34%), transparent 50%); content: ''; }
+.hero-content { position: relative; z-index: 2; max-width: 900px; margin-block: auto; padding-block: 48px; }
 .hero-title { max-width: 900px; margin: 0 auto 22px; color: var(--white); font-size: clamp(2.35rem, 5.2vw, 4.35rem); font-weight: 800; line-height: 1.08; letter-spacing: -.055em; text-wrap: balance; }
 .hero-title span { color: var(--accent-yellow); }
 .hero-subtitle { max-width: 690px; margin: 0 auto 30px; color: rgb(255 255 255 / 90%); font-size: clamp(1rem, 1.7vw, 1.2rem); font-weight: 400; line-height: 1.7; text-wrap: pretty; }
 .hero-subtitle strong { color: var(--white); font-weight: 700; }
 .hero-cta-wrapper { display: flex; justify-content: center; }
 .btn-large { min-height: 56px; padding: 15px 25px; font-size: 1rem; }
-.scroll-cue { position: relative; z-index: 1; display: grid; width: 38px; height: 38px; flex: 0 0 38px; place-items: center; align-self: center; margin: 0 auto 22px; border: 1px solid #DDE3E9; border-radius: 50%; color: var(--accent-green); font-size: 1.35rem; line-height: 1; text-decoration: none; animation: arrow-down 1.5s ease-in-out infinite; }
+.scroll-cue { position: relative; z-index: 2; display: grid; width: 38px; height: 38px; flex: 0 0 38px; place-items: center; align-self: center; margin: 0 auto 22px; border: 1px solid #DDE3E9; border-radius: 50%; color: var(--accent-green); font-size: 1.35rem; line-height: 1; text-decoration: none; animation: arrow-down 1.5s ease-in-out infinite; }
 @keyframes arrow-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
-.hero-benefits { position: relative; z-index: 1; width: 100%; border-top: 1px solid #E5E9EF; background: var(--white); color: var(--dark-blue); }
+.hero-benefits { position: relative; z-index: 2; width: 100%; border-top: 1px solid #E5E9EF; background: var(--white); color: var(--dark-blue); }
 .hero-benefits-inner { display: grid; width: min(100% - 40px, var(--container-max)); min-height: 118px; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; margin-inline: auto; }
 .benefit-item { display: flex; min-height: 62px; align-items: center; justify-content: center; gap: 14px; padding: 12px 20px; font-size: .96rem; font-weight: 600; line-height: 1.35; }
 .benefit-item + .benefit-item { border-left: 1px solid #DDE3E9; }
@@ -62,9 +72,11 @@ a { color: inherit; }
 .risk-item p { color: var(--text-main); font-size: .98rem; font-weight: 600; line-height: 1.55; }
 .risks-cta { display: flex; justify-content: center; margin-top: 28px; }
 
-.guide-section { position: relative; overflow: hidden; padding: clamp(64px, 8vw, 96px) 0; background: var(--dark-blue); }
-.guide-section::before { position: absolute; inset: 0; z-index: 0; background: linear-gradient(90deg, rgb(5 17 36 / 86%), rgb(5 17 36 / 76%) 55%, rgb(5 17 36 / 78%)), url('../images/aula-concurso-marinha-rm2-mobile.webp') center / cover no-repeat; content: ''; }
-.guide-container { position: relative; z-index: 1; max-width: 1000px; }
+.guide-section { position: relative; isolation: isolate; overflow: hidden; padding: clamp(64px, 8vw, 96px) 0; background: var(--dark-blue); }
+.guide-background { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.guide-background img { width: 100%; height: 100%; object-fit: cover; }
+.guide-section::before { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgb(5 17 36 / 86%), rgb(5 17 36 / 76%) 55%, rgb(5 17 36 / 78%)); content: ''; }
+.guide-container { position: relative; z-index: 2; max-width: 1000px; }
 .guide-intro { max-width: 760px; margin: 0 auto 32px; text-align: center; }
 .guide-title { margin-bottom: 14px; color: var(--white); font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 800; line-height: 1.13; letter-spacing: -.045em; text-wrap: balance; }
 .guide-description { color: rgb(255 255 255 / 90%); font-size: clamp(1rem, 1.6vw, 1.12rem); line-height: 1.7; }
@@ -87,10 +99,6 @@ a { color: inherit; }
 .graduate-proof-name { color: var(--dark-blue); font-size: .96rem; font-weight: 700; line-height: 1.4; text-align: center; }
 .graduate-proof-role { color: var(--text-muted); font-size: .84rem; font-weight: 500; line-height: 1.4; text-align: center; }
 
-@media (min-width: 768px) {
-    .guide-section::before { background-image: linear-gradient(90deg, rgb(5 17 36 / 86%), rgb(5 17 36 / 76%) 55%, rgb(5 17 36 / 78%)), url('../images/aula-concurso-marinha-rm2-descktop.webp'); }
-}
-
 @media (min-width: 700px) {
     .guide-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .guide-highlight { align-items: flex-start; flex-direction: column; min-height: 190px; }
@@ -102,7 +110,7 @@ a { color: inherit; }
 }
 
 @media (min-width: 900px) {
-    .hero-section { background-image: url('../images/Celebração-Naval-ao-Sol-formatura-marinha-rm2-descktop.webp'); background-position: center 42%; }
+    .hero-background img { object-position: center 42%; }
 }
 
 .process-section { padding: clamp(64px, 8vw, 96px) 0; background: var(--white); }
@@ -160,10 +168,11 @@ a { color: inherit; }
 .quiz-benefit-icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .quiz-showcase-stage { position: relative; display: grid; min-height: 700px; place-items: center; }
 .quiz-phone { position: relative; display: block; width: min(350px, 84%); padding: 10px; border: 1px solid #344154; border-radius: 40px; background: #111927; box-shadow: 0 28px 60px rgb(0 0 0 / 36%), inset 0 0 0 2px rgb(255 255 255 / 5%); color: inherit; cursor: pointer; text-decoration: none; transform: rotate(-1deg); }
-.quiz-phone-screen { position: relative; display: flex; min-height: 570px; flex-direction: column; justify-content: center; overflow: hidden; padding: 58px 24px 30px; border-radius: 30px; background: var(--dark-blue) url('../images/concurso-da-marinharm2-invictus.webp') center / cover no-repeat; }
-.quiz-phone-screen::before { position: absolute; inset: 0; background: linear-gradient(145deg, rgb(5 15 65 / 72%), rgb(10 25 47 / 78%)); content: ''; }
-.quiz-phone-speaker { position: absolute; z-index: 1; top: 16px; left: 50%; width: 68px; height: 6px; border-radius: 8px; background: rgb(255 255 255 / 72%); transform: translateX(-50%); }
-.quiz-screen-content { position: relative; z-index: 1; display: grid; gap: 28px; text-align: center; }
+.quiz-phone-screen { position: relative; isolation: isolate; display: flex; min-height: 570px; flex-direction: column; justify-content: center; overflow: hidden; padding: 58px 24px 30px; border-radius: 30px; background: var(--dark-blue); }
+.quiz-phone-background { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.quiz-phone-screen::before { position: absolute; inset: 0; z-index: 1; background: linear-gradient(145deg, rgb(5 15 65 / 72%), rgb(10 25 47 / 78%)); content: ''; }
+.quiz-phone-speaker { position: absolute; z-index: 2; top: 16px; left: 50%; width: 68px; height: 6px; border-radius: 8px; background: rgb(255 255 255 / 72%); transform: translateX(-50%); }
+.quiz-screen-content { position: relative; z-index: 2; display: grid; gap: 28px; text-align: center; }
 .quiz-screen-content p { color: var(--white); font-size: 1.35rem; font-weight: 800; line-height: 1.25; letter-spacing: -.03em; text-shadow: 0 2px 8px rgb(0 0 0 / 30%); text-wrap: balance; }
 .quiz-screen-button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; border-radius: 8px; background: var(--accent-green); color: var(--white); font-size: .94rem; font-weight: 700; }
 
@@ -206,7 +215,7 @@ a { color: inherit; }
     .logo-img { width: 58px; height: 50px; }
     .btn-header { min-height: 40px; padding: 9px 11px; font-size: .68rem; }
     .hero-section { min-height: 700px; min-height: max(640px, calc(100svh - 74px)); padding-top: 8px; }
-    .hero-section { background-position: 55% center; }
+    .hero-background img { object-position: 55% center; }
     .hero-content { padding-block: 36px; }
     .hero-title { font-size: clamp(2.15rem, 10vw, 3.15rem); letter-spacing: -.05em; }
     .hero-subtitle { margin-bottom: 24px; font-size: 1rem; }

@@ -7,10 +7,67 @@
     <meta name="theme-color" content="#0A192F">
     <title>Invictus RM2 | Português para a prova da Marinha</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preload" href="./assets/fonts/Inter/Inter-latin.woff" as="font" type="font/woff" crossorigin>
+
+    <style>
+        @font-face { font-family:'Inter'; src:url('./assets/fonts/Inter/Inter-latin.woff') format('woff'); font-style:normal; font-weight:100 900; font-display:swap; }
+        :root { --primary-blue:#050F41; --dark-blue:#0A192F; --accent-green:#419a50; --accent-yellow:#fba933; --bg-light:#F8F9FA; --text-main:#212529; --text-muted:#5C6675; --white:#fff; --font-base:'Inter','Roboto',sans-serif; --container-max:1160px; }
+        *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+        body { background:var(--bg-light); color:var(--text-main); font-family:var(--font-base); line-height:1.6; -webkit-font-smoothing:antialiased; }
+        img,svg { display:block; max-width:100%; }
+        a { color:inherit; }
+        .container { width:min(100% - 40px,var(--container-max)); margin-inline:auto; }
+        .header { position:relative; z-index:5; padding:12px 0; border-bottom:1px solid #E5E9EF; background:var(--white); }
+        .header-container,.brand { display:flex; align-items:center; }
+        .header-container { justify-content:space-between; gap:20px; }
+        .brand { gap:10px; color:var(--dark-blue); text-decoration:none; }
+        .logo-img { width:66px; height:58px; object-fit:contain; }
+        .btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:10px; border:0; border-radius:6px; background:var(--accent-green); color:var(--white); text-align:center; text-decoration:none; font:inherit; font-weight:700; }
+        .text-desktop { display:inline; }
+        .text-mobile { display:none; }
+        .btn-header { min-height:44px; padding:10px 17px; font-size:.82rem; }
+        .hero-section { position:relative; isolation:isolate; display:flex; min-height:690px; min-height:max(620px,calc(100svh - 82px)); flex-direction:column; justify-content:center; overflow:hidden; padding:24px 0 0; color:var(--white); text-align:center; background:var(--dark-blue); }
+        .hero-background { position:absolute; inset:0; z-index:0; pointer-events:none; }
+        .hero-background img { width:100%; height:100%; object-fit:cover; object-position:center 42%; }
+        .hero-section::before { position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,rgb(5 17 36 / 83%),rgb(5 17 36 / 68%) 55%,rgb(5 17 36 / 64%)),linear-gradient(0deg,rgb(5 17 36 / 34%),transparent 50%); content:''; }
+        .hero-content { position:relative; z-index:2; max-width:900px; margin-block:auto; padding-block:48px; }
+        .hero-title { max-width:900px; margin:0 auto 22px; color:var(--white); font-size:clamp(2.35rem,5.2vw,4.35rem); font-weight:800; line-height:1.08; letter-spacing:-.055em; text-wrap:balance; }
+        .hero-title span { color:var(--accent-yellow); }
+        .hero-subtitle { max-width:690px; margin:0 auto 30px; color:rgb(255 255 255 / 90%); font-size:clamp(1rem,1.7vw,1.2rem); font-weight:400; line-height:1.7; text-wrap:pretty; }
+        .hero-subtitle strong { color:var(--white); font-weight:700; }
+        .hero-cta-wrapper { display:flex; justify-content:center; }
+        .btn-large { min-height:56px; padding:15px 25px; font-size:1rem; }
+        .scroll-cue { position:relative; z-index:2; display:grid; width:38px; height:38px; flex:0 0 38px; place-items:center; align-self:center; margin:0 auto 22px; border:1px solid #DDE3E9; border-radius:50%; color:var(--accent-green); font-size:1.35rem; line-height:1; text-decoration:none; animation:arrow-down 1.5s ease-in-out infinite; }
+        @keyframes arrow-down { 0%,100% { transform:translateY(0); } 50% { transform:translateY(7px); } }
+        .hero-benefits { position:relative; z-index:2; width:100%; border-top:1px solid #E5E9EF; background:var(--white); color:var(--dark-blue); }
+        .hero-benefits-inner { display:grid; width:min(100% - 40px,var(--container-max)); min-height:118px; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:center; margin-inline:auto; }
+        .benefit-item { display:flex; min-height:62px; align-items:center; justify-content:center; gap:14px; padding:12px 20px; font-size:.96rem; font-weight:600; line-height:1.35; }
+        .benefit-item + .benefit-item { border-left:1px solid #DDE3E9; }
+        .benefit-icon { display:grid; width:44px; height:44px; flex:0 0 44px; place-items:center; border-radius:12px; background:rgb(65 154 80 / 12%); color:var(--accent-green); }
+        .benefit-icon svg { width:24px; height:24px; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+        @media (min-width:900px) { .hero-background img { object-position:center 42%; } }
+        @media (max-width:560px) {
+            .container { width:min(100% - 32px,var(--container-max)); }
+            .header { padding:13px 0; }
+            .logo-img { width:58px; height:50px; }
+            .btn-header { min-height:40px; padding:9px 11px; font-size:.68rem; }
+            .hero-section { min-height:700px; min-height:max(640px,calc(100svh - 74px)); padding-top:8px; }
+            .hero-background img { object-position:55% center; }
+            .hero-content { padding-block:36px; }
+            .hero-title { font-size:clamp(2.15rem,10vw,3.15rem); letter-spacing:-.05em; }
+            .hero-subtitle { margin-bottom:24px; font-size:1rem; }
+            .btn-large { width:100%; padding-inline:14px; font-size:.92rem; }
+            .text-desktop { display:none; }
+            .text-mobile { display:inline; }
+            .scroll-cue { margin-bottom:16px; }
+            .hero-benefits-inner { width:100%; min-height:112px; }
+            .benefit-item { flex-direction:column; gap:7px; padding:12px 7px; font-size:.68rem; text-align:center; }
+            .benefit-icon { width:38px; height:38px; flex-basis:38px; border-radius:11px; }
+            .benefit-icon svg { width:21px; height:21px; }
+        }
+    </style>
+    <link rel="preload" as="style" href="./assets/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./assets/css/style.css"></noscript>
 
     <link rel="icon" type="image/x-icon" href="/assets/icons/invictus.ico">
 </head>
@@ -30,6 +87,10 @@
 
     <main>
         <section class="hero-section">
+            <picture class="hero-background" aria-hidden="true">
+                <source media="(min-width: 900px)" srcset="./assets/images/Celebração-Naval-ao-Sol-formatura-marinha-rm2-descktop.webp">
+                <img src="./assets/images/Amor-em-cerimônia-naval-formatura-marinha-rm2-foto-milita-mobile.webp" alt="" width="655" height="1200" fetchpriority="high" decoding="async">
+            </picture>
             <div class="container hero-content">
                 <h1 class="hero-title">O método rápido e certeiro para <span>gabaritar Português</span> na prova da Marinha.</h1>
                 <p class="hero-subtitle">Aprenda com quem <strong>já sentiu na pele essa dificuldade</strong>. Método <strong>passo a passo</strong>, do básico ao avançado, <strong>focado na banca RM2 da Marinha</strong>.</p>
@@ -89,6 +150,10 @@
         </section>
 
         <section class="guide-section" aria-labelledby="guide-title">
+            <picture class="guide-background" aria-hidden="true">
+                <source media="(min-width: 768px)" srcset="./assets/images/aula-concurso-marinha-rm2-descktop.webp">
+                <img src="./assets/images/aula-concurso-marinha-rm2-mobile.webp" alt="" width="675" height="1200" loading="lazy" decoding="async">
+            </picture>
             <div class="container guide-container">
                 <div class="guide-intro">
                     <h2 class="guide-title" id="guide-title">Quem já passou por isso vai te guiar até a farda.</h2>
@@ -96,7 +161,7 @@
                 </div>
                 <div class="guide-highlights">
                     <article class="guide-highlight">
-                        <img src="./assets/images/professor-eduardo-portugues-invictus.webp" alt="Prof. Eduardo" class="guide-avatar">
+                        <img src="./assets/images/professor-eduardo-128.webp" srcset="./assets/images/professor-eduardo-128.webp 128w, ./assets/images/professor-eduardo-256.webp 256w" sizes="64px" width="64" height="64" alt="Prof. Eduardo" class="guide-avatar" loading="lazy" decoding="async">
                         <p><strong>Prof. Eduardo:</strong> Especialista na banca RM2 e +1.000 alunos preparados.</p>
                     </article>
                     <article class="guide-highlight">
@@ -118,21 +183,21 @@
                 <h2 class="graduate-proof-title" id="graduate-proof-title">Aprovados na RM2</h2>
                 <div class="graduate-proof-grid">
                     <article class="graduate-proof-card">
-                        <img src="./assets/images/Aprovada-marinha-rm2.webp" alt="Aprovada na RM2">
+                        <img src="./assets/images/Aprovada-marinha-rm2-160.webp" srcset="./assets/images/Aprovada-marinha-rm2-160.webp 160w, ./assets/images/Aprovada-marinha-rm2-320.webp 320w, ./assets/images/Aprovada-marinha-rm2.webp 500w" sizes="(max-width: 560px) 76px, 132px" width="500" height="500" alt="Aprovada na RM2" loading="lazy" decoding="async">
                         <div class="graduate-proof-caption">
-                            <p class="graduate-proof-name">SUBSTITUIR NOME</p>
-                            <p class="graduate-proof-role">Técnica de enfermagem</p>
+                            <p class="graduate-proof-name">Iasmin Muniz</p>
+                            <p class="graduate-proof-role">Técnica em Radiologia</p>
                         </div>
                     </article>
                     <article class="graduate-proof-card">
-                        <img src="./assets/images/Sandra-Santos-Aprovada-marinha-rm2.webp" alt="Aprovada na RM2">
+                        <img src="./assets/images/Sandra-Santos-Aprovada-marinha-rm2-160.webp" srcset="./assets/images/Sandra-Santos-Aprovada-marinha-rm2-160.webp 160w, ./assets/images/Sandra-Santos-Aprovada-marinha-rm2-320.webp 320w, ./assets/images/Sandra-Santos-Aprovada-marinha-rm2.webp 500w" sizes="(max-width: 560px) 76px, 132px" width="500" height="500" alt="Aprovada na RM2" loading="lazy" decoding="async">
                         <div class="graduate-proof-caption">
                             <p class="graduate-proof-name">Sandra Santos</p>
                             <p class="graduate-proof-role">Técnica de enfermagem</p>
                         </div>
                     </article>
                     <article class="graduate-proof-card">
-                        <img src="./assets/images/Thayane-Paula-Aprovada-marinha-rm2.webp" alt="Aprovada na RM2">
+                        <img src="./assets/images/Thayane-Paula-Aprovada-marinha-rm2-160.webp" srcset="./assets/images/Thayane-Paula-Aprovada-marinha-rm2-160.webp 160w, ./assets/images/Thayane-Paula-Aprovada-marinha-rm2-320.webp 320w, ./assets/images/Thayane-Paula-Aprovada-marinha-rm2.webp 500w" sizes="(max-width: 560px) 76px, 132px" width="500" height="500" alt="Aprovada na RM2" loading="lazy" decoding="async">
                         <div class="graduate-proof-caption">
                             <p class="graduate-proof-name">Thayane Paula</p>
                             <p class="graduate-proof-role">Técnica de enfermagem</p>
@@ -228,6 +293,7 @@
                 <div class="quiz-showcase-stage">
                     <a class="quiz-phone" href="quiz.html" aria-label="FAÇA O TESTE AGORA">
                         <div class="quiz-phone-screen">
+                            <img class="quiz-phone-background" src="./assets/images/concurso-da-marinharm2-invictus.webp" alt="" width="678" height="1200" loading="lazy" decoding="async">
                             <span class="quiz-phone-speaker" aria-hidden="true"></span>
                             <div class="quiz-screen-content">
                                 <p>Descubra seu perfil de aprovação na Marinha</p>

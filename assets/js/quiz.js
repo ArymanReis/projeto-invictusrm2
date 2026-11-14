@@ -79,6 +79,17 @@
         welcome.hidden = current !== 0;
         flow.hidden = current === 0;
 
+        // Dispara o rastreamento adaptado para o fluxo do EAD (onde a etapa 9 é a oferta final)
+        if (current !== 0) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'quiz_step_view',
+                quiz_type: 'ead',
+                quiz_step: current,
+                quiz_step_name: current === 9 ? 'oferta_ead' : `etapa_${current}`
+            });
+        }
+
         if (current === 0) return;
 
         screens.forEach((screen) => {
@@ -94,16 +105,6 @@
             heading.setAttribute('tabindex', '-1');
             heading.focus({ preventScroll: true });
         }
-    };
-
-    const restoreChoices = (step) => {
-        const screen = flow.querySelector(`[data-step="${step}"]`);
-        if (!screen) return;
-        const stored = answers.get(step);
-        screen.querySelectorAll('[data-choice]').forEach((button) => {
-            const value = button.dataset.value || button.textContent.trim();
-            button.setAttribute('aria-pressed', String(value === stored));
-        });
     };
 
     flow.addEventListener('click', (event) => {

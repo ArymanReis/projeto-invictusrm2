@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WJBBPPFW');</script>
-
     <meta name="theme-color" content="#0A192F">
     <meta name="description" content="Descubra seu Índice de Prontidão para a Marinha.">
     <title>Índice de Prontidão para a Marinha | Invictus RM2</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preload" href="./assets/fonts/Inter/Inter-latin.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="./assets/css/quiz.css">
 
     <link rel="icon" type="image/x-icon" href="/assets/icons/invictus.ico">
 
+    <script>
+        window.addEventListener('load', function () {
+            window.setTimeout(function () {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-WJBBPPFW';
+                document.head.appendChild(script);
+            }, 8000);
+        }, { once: true });
+    </script>
     <script src="./assets/js/meta-pixel.js" defer></script>
     <script src="./assets/js/quiz.js" defer></script>
 </head>
@@ -39,7 +42,7 @@
                 <button class="quiz-button quiz-button-primary" type="button" data-action="start">Começar Teste Agora</button>
             </div>
             <span class="quiz-welcome-mark" aria-hidden="true">
-                <img src="./assets/icons/marinha-insignia.svg" alt="">
+                <img src="./assets/icons/marinha-insignia.svg" alt="" width="38" height="38" fetchpriority="high" decoding="async">
             </span>
         </section>
 

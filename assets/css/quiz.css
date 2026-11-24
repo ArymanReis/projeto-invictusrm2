@@ -1,3 +1,11 @@
+@font-face { font-family: 'Inter'; src: url('../fonts/Inter/Inter-latin.woff') format('woff'); font-style: normal; font-weight: 100 900; font-display: swap; }
+:root { --primary-blue: #050F41; --dark-blue: #0A192F; --accent-green: #419a50; --accent-yellow: #fba933; --bg-light: #F8F9FA; --text-main: #212529; --text-muted: #5C6675; --white: #FFFFFF; --font-base: 'Inter', 'Roboto', sans-serif; --container-max: 1160px; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-base); color: var(--text-main); background: var(--bg-light); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-yellow); outline-offset: 3px; }
 .quiz-body { min-height: 100svh; background: var(--bg-light); }
 .quiz-app { min-height: 100svh; }
 .quiz-welcome { position: relative; display: grid; min-height: 100svh; place-items: center; overflow: hidden; padding: 100px 24px 84px; background: var(--dark-blue) url('../images/concurso-da-marinha-rm2.webp') center / cover no-repeat; color: var(--white); }
@@ -60,7 +68,7 @@
 .quiz-button:hover:not(:disabled) { filter: brightness(.84); transform: translateY(-1px); box-shadow: 0 8px 22px rgb(0 0 0 / 18%); }
 .quiz-button:focus-visible { outline: 3px solid var(--accent-yellow); outline-offset: 3px; }
 .quiz-button:disabled { cursor: not-allowed; opacity: .48; }
-.quiz-button-primary { background: var(--accent-green); color: var(--white); }
+.quiz-button-primary { background: #347f40; color: var(--white); }
 .quiz-button-secondary { border: 1px solid #DDE3E9; background: var(--white); color: var(--dark-blue); }
 .quiz-controls .quiz-button, [data-controls-story] .quiz-button { width: 100%; }
 .quiz-validation { min-height: 17px; color: #A84A2B; font-size: .78rem; text-align: center; }
